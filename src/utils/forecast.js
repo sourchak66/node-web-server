@@ -17,7 +17,7 @@ const forecast = (latitude, longitude, callback) =>
         else
         {
             const weatherData = body.data[0];
-            const output = weatherData.weather.description + ". It is currently " + weatherData.temp + " degrees out. There is a " + weatherData.precip + "% chance of rain.";
+            const output = weatherData.weather.description + ". It is currently " + weatherData.temp + " degrees out. The air quality index is " + weatherData.aqi + ". The relative humidity is " + weatherData.rh + "%. There is a " + weatherData.precip + "% chance of rain.";
 
             callback(undefined,
             {
