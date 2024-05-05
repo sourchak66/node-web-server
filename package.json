@@ -11,12 +11,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "hbs": "^4.2.0",
     "request": "^2.88.2"
   },
-  "description": "",
   "devDependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourchak66/node-web-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sourchak66/node-web-server/issues"
+  },
+  "homepage": "https://github.com/sourchak66/node-web-server#readme",
+  "description": ""
 }

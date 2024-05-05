@@ -1,8 +1,17 @@
 import request from "request";
+import { fileURLToPath } from "url";
+import path from "path";
+import dotenv from "dotenv";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config();
 
 const forecast = (latitude, longitude, callback) =>
 {
-    const forecastUrl = "https://api.weatherbit.io/v2.0/current?lat=" + latitude + "&lon=" + longitude + "&key=671380814c7548109ac3a5ea6cf30b21&units=I";
+    // Inject APIKEY using env variable
+    const forecastUrl = "https://api.weatherbit.io/v2.0/current?lat=" + latitude + "&lon=" + longitude + "&key=" + process.env.FORECAST_API_KEY + "&units=I";
     
     request( { url : forecastUrl, json : true }, (error, { body } = {}) =>
     {

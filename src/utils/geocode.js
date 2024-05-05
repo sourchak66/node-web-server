@@ -1,8 +1,17 @@
 import request from "request";
+import { fileURLToPath } from "url";
+import path from "path";
+import dotenv from "dotenv";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config();
 
 const geoCode = (address, callback) =>
 {
-    const geoCodeURL = "https://api.tomtom.com/search/2/geocode/" + address + ".json?key=9GpUoirdU2zH8hFX4Eial2eiONLilaja&limit=1";
+    // Inject APIKEY using env variable
+    const geoCodeURL = "https://api.tomtom.com/search/2/geocode/" + address + ".json?key=" + process.env.GEOCODE_API_KEY + "&limit=1";
     
     request( { url : geoCodeURL, json : true }, (error, { body } = {}) =>
     {
